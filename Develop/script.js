@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 // Lowercase Array 
 var lowerCaseArray = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 // Numeric Array 
-var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
 // Special Character Array - assign numbers to characters using parseInt and const declaration to variable identifier so it cannot be re-assigned 
 var specialCharacterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
