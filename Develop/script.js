@@ -1,25 +1,20 @@
 // Assignment code here
-// For each password length, function choose characters randomly( randomCharacter)from Arrays and add to === Password length and return... 
 
 
 var generateBtn = document.querySelector("#generate");
 // Lowercase Array 
-var lowerCaseArray = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o"];
+var lowerCaseArray = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 // Numeric Array 
-var numberArray = [1, 2, 3, 4, 5, 6, 7];
+var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 // Special Character Array - assign numbers to characters using parseInt and const declaration to variable identifier so it cannot be re-assigned 
 var specialCharacterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
 // Uppercase Array
-var upperCaseArray = ["A", "B", "C"];
+var upperCaseArray = ["A", "B", "C" ,"D", "E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
-  // if else: if yes run function to choose random lowercase letters and store in "possible" array...
-  // else go to next window.confirm...same for all window confirms...
-
-
+// Validation 
   var passwordLength = parseInt(window.prompt("How long do you want your password to be "));
   var hasUppercase = window.confirm("do you want an uppercase letter?");
   var hasNumber = window.confirm("do you want a number?");
@@ -27,12 +22,7 @@ function writePassword() {
   var hasLowercase = window.confirm("do you want lowercase?");
   
 
-  if (hasLowercase === false && hasUppercase === false && hasSpecialcharacter === false && hasNumber === false) {
-    window.alert(" You must choose an option !");
-    writePassword();
-  }
-
-  if (passwordLength < 8) {
+   if (passwordLength < 8) {
     window.alert("password length must be 8 characters");
 
   }
@@ -40,10 +30,18 @@ function writePassword() {
   if (passwordLength > 128) {
     window.alert("password length must be 128 characters");
   }
-
-  var userCharsetArray = [];
   
+  if (hasLowercase === false && hasUppercase === false && hasSpecialcharacter === false && hasNumber === false) {
+    window.alert(" You must choose an option !");
+    writePassword();
+  }
+ 
+  // End Validation 
+ 
 
+  var userCharsetArray = []; //Storage for User Selected Arrays chosen in Validation Section
+  
+  // if statements to select arrays(user selection) and push array to empty userCharsetArray
   if (hasUppercase) {
     userCharsetArray.push(upperCaseArray)
   }
@@ -60,7 +58,7 @@ function writePassword() {
     userCharsetArray.push(specialCharacterArray)
   }
 
-  var password =""; //Set Password equal to a string
+  var password =""; //Set Password equal to an empty string
  
   for (i = 0 ; i < passwordLength; i++) {      // for loop for random math objects to iterate same length of password 
        var randomNumber = Math.floor(Math.random() *userCharsetArray.length);
