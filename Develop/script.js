@@ -15,20 +15,22 @@ var upperCaseArray = ["A", "B", "C" ,"D", "E","F","G","H","I","J","K","L","M","N
 // Write password to the #password input
 function writePassword() {
 // Validation 
-  var passwordLength = parseInt(window.prompt("How long do you want your password to be "));
+  
   var hasUppercase = window.confirm("do you want an uppercase letter?");
   var hasNumber = window.confirm("do you want a number?");
-  var hasSpecialcharacter = window.confirm("do you want special character?");
+  var hasSpecialcharacter = window.confirm("do you want special characters?");
   var hasLowercase = window.confirm("do you want lowercase?");
-  
+  var passwordLength = parseInt(window.prompt("How long do you want your password to be? "));
 
+  
    if (passwordLength < 8) {
     window.alert("password length must be 8 characters");
-
+    return;
   }
 
   if (passwordLength > 128) {
     window.alert("password length must be 128 characters");
+    return;
   }
   
   if (hasLowercase === false && hasUppercase === false && hasSpecialcharacter === false && hasNumber === false) {
